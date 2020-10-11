@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky", "MailDucky\MailDucky.csproj", "{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.SMTP", "MailDucky.SMTP\MailDucky.SMTP.csproj", "{AC369635-8A81-4743-B278-DB060377F424}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.POP3", "MailDucky.POP3\MailDucky.POP3.csproj", "{B5DA56D4-C9C9-4EE4-A612-52897BF5CD5C}"
@@ -15,16 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.Common", "MailDuc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailDucky.SettingsDB", "MailDucky.SettingsDB\MailDucky.SettingsDB.csproj", "{C982E972-B710-4E62-B6BF-ED74CB1C4982}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailDucky.API", "MailDucky.API\MailDucky.API.csproj", "{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailDucky.Service", "MailDucky.Service\MailDucky.Service.csproj", "{CBAF7BE3-72DA-4E15-9000-457705FB9537}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC369635-8A81-4743-B278-DB060377F424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC369635-8A81-4743-B278-DB060377F424}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC369635-8A81-4743-B278-DB060377F424}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +43,14 @@ Global
 		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAF7BE3-72DA-4E15-9000-457705FB9537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAF7BE3-72DA-4E15-9000-457705FB9537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAF7BE3-72DA-4E15-9000-457705FB9537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAF7BE3-72DA-4E15-9000-457705FB9537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
