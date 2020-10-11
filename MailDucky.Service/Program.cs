@@ -43,12 +43,12 @@ namespace MailDucky.Service
                     config.SetBasePath(Directory.GetCurrentDirectory())
                         .AddJsonFile("appsettings.json");
                     config.Build();
-                })
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    // Web api Host to control Services and Configure stuff
-                    // not implemented !
-                    // webBuilder.UseStartup<Startup>();
                 });
+                //.ConfigureWebHostDefaults(webBuilder =>
+                //{
+                //    // Web api Host to control Services and Configure stuff
+                //    // not implemented !
+                //    // webBuilder.UseStartup<Startup>();
+                //});
     }
 }
