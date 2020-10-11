@@ -17,6 +17,7 @@ namespace MailDucky.Common.Abstact
     {
         public static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
+        // Setting Newline and Terminator for Pop3 and SMTP
         public string NEWLINE = "\r\n";
         public string TERMINATOR = "\r\n.\r\n";
 
@@ -28,7 +29,6 @@ namespace MailDucky.Common.Abstact
         public CancellationToken Token { get; set; }
         public GraphServiceClient GraphClient { get; set; }
         public User User { get; set; }
-
         public AppSettings Settings {get; set;}
 
         public abstract Task BeginSession(TcpClient client);
@@ -38,6 +38,9 @@ namespace MailDucky.Common.Abstact
             Settings = settings;
         }
 
+        /// <summary>
+        /// This will stop Sessions
+        /// </summary>
         public void StopSession()
         {
             Logger.Debug("Stopping Session");
