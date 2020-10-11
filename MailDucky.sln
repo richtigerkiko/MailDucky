@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky", "MailDucky\MailDucky.csproj", "{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.SMTP", "MailDucky.SMTP\MailDucky.SMTP.csproj", "{AC369635-8A81-4743-B278-DB060377F424}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.POP3", "MailDucky.POP3\MailDucky.POP3.csproj", "{B5DA56D4-C9C9-4EE4-A612-52897BF5CD5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.GraphConnector", "MailDucky.GraphConnector\MailDucky.GraphConnector.csproj", "{95CD2544-96C4-4E5D-8BD3-3F61076FEF30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.Common", "MailDucky.Common\MailDucky.Common.csproj", "{948124F1-82B1-4697-BD63-F59EB730621C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailDucky.SettingsDB", "MailDucky.SettingsDB\MailDucky.SettingsDB.csproj", "{C982E972-B710-4E62-B6BF-ED74CB1C4982}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E95FFF06-5EDF-4337-B46F-A90A4A90F96E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC369635-8A81-4743-B278-DB060377F424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC369635-8A81-4743-B278-DB060377F424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC369635-8A81-4743-B278-DB060377F424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC369635-8A81-4743-B278-DB060377F424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5DA56D4-C9C9-4EE4-A612-52897BF5CD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DA56D4-C9C9-4EE4-A612-52897BF5CD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DA56D4-C9C9-4EE4-A612-52897BF5CD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DA56D4-C9C9-4EE4-A612-52897BF5CD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95CD2544-96C4-4E5D-8BD3-3F61076FEF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CD2544-96C4-4E5D-8BD3-3F61076FEF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CD2544-96C4-4E5D-8BD3-3F61076FEF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CD2544-96C4-4E5D-8BD3-3F61076FEF30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{948124F1-82B1-4697-BD63-F59EB730621C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948124F1-82B1-4697-BD63-F59EB730621C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948124F1-82B1-4697-BD63-F59EB730621C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948124F1-82B1-4697-BD63-F59EB730621C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52B71EFF-DEAD-4C74-A0C9-6036559DC6CD}
+	EndGlobalSection
+EndGlobal

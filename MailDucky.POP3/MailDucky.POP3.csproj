@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.7.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MailDucky.Common\MailDucky.Common.csproj" />
+    <ProjectReference Include="..\MailDucky.GraphConnector\MailDucky.GraphConnector.csproj" />
+  </ItemGroup>
+
+</Project>
