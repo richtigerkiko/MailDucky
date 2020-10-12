@@ -21,10 +21,15 @@ namespace MailDucky.POP3.Utilities
             }
         }
 
+
+        /// <summary>
+        /// Returns a Tupel where Tupel 1 is the Command and Tuple 2 are the arguments.
+        /// </summary>
+        /// <param name="commandLine"></param>
+        /// <returns></returns>
         public static Tuple<string, string> SplitCommandLine(string commandLine)
         {
             var commandList = commandLine.Split(' ').ToList();
-            var command = commandList.FirstOrDefault();
             var argument = String.Join(" ", commandList.Skip(1));
             return new Tuple<string, string>(commandList[0], argument);
         }
