@@ -54,8 +54,7 @@ namespace MailDucky.POP3.Pop3Commands
                     Session.SessionState = SessionState.TRANS;
                     Session.User = user;
                     var getGraphMails = new GraphMailingService(Session.GraphClient, Session.Settings);
-                    var mailList = await getGraphMails.GetMailsAsync(user);
-                    Session.MessageStore = mailList;
+                    Session.MessageStore = await getGraphMails.GetMailsAsync(user);
                     return Pop3Responses.AuthSucceeded;
                 }
                 else

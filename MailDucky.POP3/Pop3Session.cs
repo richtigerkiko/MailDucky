@@ -20,7 +20,7 @@ namespace MailDucky.POP3
 
         public const int Timeout = 60000;
         public SessionState SessionState { get; internal set; }
-        public Dictionary<string, string> MessageStore { get; internal set; }
+        public Dictionary<string, string> MessageStore { get; set; }
         public List<string> MessageIdsMarkedForDeletion { get; internal set; }
 
         public List<Pop3CommandBase> Pop3Commands { get; set; }
