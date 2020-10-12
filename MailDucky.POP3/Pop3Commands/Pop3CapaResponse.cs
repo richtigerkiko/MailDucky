@@ -18,6 +18,7 @@ namespace MailDucky.POP3.Pop3Commands
             Enum.GetNames(typeof(Pop3CommandType))
                 .ToList()
                 .ForEach(x => {
+
                     returnString += x + Session.NEWLINE;
                 });
             returnString += Session.TERMINATOR;
