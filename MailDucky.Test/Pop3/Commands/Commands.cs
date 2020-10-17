@@ -3,6 +3,7 @@ using MailDucky.POP3.Enums;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,8 +33,8 @@ namespace MailDucky.Test.Pop3.Commands
         [Test]
         public async Task Capa()
         {
-            var noopCommand = commandFactory.Parse("CAPA");
-            var response = await noopCommand.GetResponseAsync();
+            var userInput = commandFactory.Parse("CAPA");
+            var response = await userInput.GetResponseAsync();
 
             var itShouldBe = String.Format(Pop3Responses.OK, "Capability list follows") + Environment.NewLine;
 
@@ -47,6 +48,17 @@ namespace MailDucky.Test.Pop3.Commands
 
             // Add Terminator
             itShouldBe += "\r\n.\r\n";
+
+            Assert.AreEqual(itShouldBe, response);
+        }
+
+        [Test]
+        public async Task InvalidCommand()
+        {
+            var userInput = commandFactory.Parse(Path.GetRandomFileName());
+            var response = await userInput.GetResponseAsync();
+
+            var itShouldBe = String.Format(Pop3Responses.Error, "Invalid Command");
 
             Assert.AreEqual(itShouldBe, response);
         }
