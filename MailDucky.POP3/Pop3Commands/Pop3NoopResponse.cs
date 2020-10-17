@@ -11,8 +11,7 @@ namespace MailDucky.POP3.Pop3Commands
 
         public override string GetResponse()
         {
-            if(Session.SessionState == SessionState.TRANS) return Pop3Responses.OK;
-            else return Pop3Responses.NotAuthenticated;
+            return Pop3Responses.OK;
         }
     }
 }

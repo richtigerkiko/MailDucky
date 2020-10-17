@@ -20,7 +20,7 @@ namespace MailDucky.SMTP
         {
             SMTPCommandType commandType;
 
-            if (Enum.TryParse<SMTPCommandType>(command, out commandType))
+            if (Enum.TryParse(command, out commandType))
             {
                 return commandType;
             }
