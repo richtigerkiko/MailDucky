@@ -27,39 +27,27 @@ namespace MailDucky.POP3.Pop3Commands
             }
             else
             {
-                return await GetAuthResponse();
+                Username = Argument;
+                var graphAuthService = new GraphAuthenticationService(Session.Settings);
+                Session.GraphClient = graphAuthService.graphClient;
+                var user = await graphAuthService.GetUser(Username);
+                if (user != null)
+                {
+                    Session.SessionState = SessionState.WAITINGPASSWORD;
+                    Session.User = user;
+                    return Pop3Responses.UsernameOK;
+                }
+                else
+                {
+                    Session.SessionState = SessionState.AUTH;
+                    return string.Format(Pop3Responses.UsernameNotFound, Username);
+                }
             }
-        }
-
-        private async Task<string> GetAuthResponse()
-        {
-            Username = Argument;
-            var graphAuthService = new GraphAuthenticationService(Session.Settings);
-            Session.GraphClient = graphAuthService.graphClient;
-            var user = await graphAuthService.GetUser(Username);
-            if (user != null)
-            {
-                Session.SessionState = SessionState.WAITINGPASSWORD;
-                Session.User = user;
-                return Pop3Responses.UsernameOK;
-            }
-            else
-            {
-                Session.SessionState = SessionState.AUTH;
-                return string.Format(Pop3Responses.UsernameNotFound, Username);
-            }
-            
-        }
-
-        private bool AuthenticateUser(string username, string password)
-        {
-            if(username == "alex" && password == "1234") return true;
-            else return false;
         }
 
         public override string GetResponse()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
