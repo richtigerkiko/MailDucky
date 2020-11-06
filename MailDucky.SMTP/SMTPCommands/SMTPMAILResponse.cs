@@ -42,7 +42,6 @@ namespace MailDucky.SMTP.SMTPCommands
                 Session.SendResponse("250 OK");
                 await ProcessRecipients();
                 await ProcessData();
-                //RawData = string.Join(Environment.NewLine, RawData.Split(Environment.NewLine).Reverse().Skip(2).Reverse());
                 var mimeMessage = ConvertMime();
 
                 var grapService = new GraphMailingService(Session.GraphClient, Session.Settings, Session.User);

@@ -19,7 +19,7 @@ namespace MailDucky.GraphConnector
             IConfidentialClientApplication confidentialClientApplication = ConfidentialClientApplicationBuilder
                                                                 .Create(Settings.ClientID)
                                                                 .WithTenantId(Settings.TenantId)
-                                                                .WithClientSecret("u_BEJa7W2~DA4E3u~-3O_tI1N.ck9nKY9n")
+                                                                .WithClientSecret(Settings.AppSecret)
                                                                 .Build();
 
             var authProvider = new ClientCredentialProvider(confidentialClientApplication);
@@ -51,8 +51,6 @@ namespace MailDucky.GraphConnector
             {
                 return await graphClient.Users[username].Request()
                                 .GetAsync();
-                //return await graphClient.Users[username].Request()
-                //                .GetAsync();
             }
             catch (Exception ex)
             {

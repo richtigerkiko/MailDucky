@@ -48,7 +48,6 @@ namespace MailDucky.POP3.Pop3Commands
             {
                 var graphAuthService = new GraphAuthenticationService(Session.Settings);
                 Session.GraphClient = graphAuthService.graphClient;
-                //var user = await graphAuthService.GetUser(Username, Password);
                 var user = await graphAuthService.GetUser(Username);
                 if (user != null)
                 {
