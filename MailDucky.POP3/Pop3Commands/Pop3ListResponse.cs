@@ -19,7 +19,7 @@ namespace MailDucky.POP3.Pop3Commands
         {
             if (Session.SessionState == SessionState.TRANS)
             {
-                var getGraphMails = new GraphMailingService(Session.GraphClient, Session.Settings);
+                var getGraphMails = new GraphMailingService(Session.GraphClient, Session.Settings, Session.User);
                 return FormatPop3MessageResponse(Session.MessageStore);
             }
             else return Pop3Responses.NotAuthenticated;

@@ -10,7 +10,7 @@ namespace MailDucky.Test.MockingData
 {
     public class TcpClientAdapter : ITcpClient
     {
-        private TcpClient wrappedClient;
+        public TcpClient wrappedClient { get; set; }
 
         public TcpClientAdapter(TcpClient client)
         {

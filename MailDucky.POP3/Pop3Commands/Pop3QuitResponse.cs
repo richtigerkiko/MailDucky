@@ -18,7 +18,7 @@ namespace MailDucky.POP3.Pop3Commands
             {
                 return Pop3Responses.Quitting;
             }
-            var graphMailingService = new GraphMailingService(Session.GraphClient, Session.Settings);
+            var graphMailingService = new GraphMailingService(Session.GraphClient, Session.Settings, Session.User);
             await graphMailingService.MoveMailsToArchiveAsync(Session.MessageIdsMarkedForDeletion);
             return Pop3Responses.Quitting;
         }

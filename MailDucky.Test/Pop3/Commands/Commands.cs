@@ -15,10 +15,13 @@ namespace MailDucky.Test.Pop3.Commands
 
         private Pop3CommandFactory commandFactory;
 
+        private Pop3Session pop3Session;
+
         [SetUp]
         public void Setup()
         {
-            commandFactory = new Pop3CommandFactory(new Pop3Session(config));
+            pop3Session = new Pop3Session(config);
+            commandFactory = new Pop3CommandFactory(pop3Session);
         }
 
         [Test]
@@ -62,5 +65,17 @@ namespace MailDucky.Test.Pop3.Commands
 
             Assert.AreEqual(itShouldBe, response);
         }
+
+        //[Test]
+        //public async Task User()
+        //{
+        //    var userInput = commandFactory.Parse("USER n.Koch@devbrett.onmicrosoft.com");
+        //    pop3Session.NetworkStream = new System.Net.Sockets.NetworkStream();
+        //    var response = await userInput.GetResponseAsync();
+
+        //    var itShouldBe = String.Format(Pop3Responses.Error, "Invalid Command");
+
+        //    Assert.AreEqual(itShouldBe, response);
+        //}
     }
 }

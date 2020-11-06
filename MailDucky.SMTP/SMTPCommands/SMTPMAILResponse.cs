@@ -45,7 +45,7 @@ namespace MailDucky.SMTP.SMTPCommands
                 //RawData = string.Join(Environment.NewLine, RawData.Split(Environment.NewLine).Reverse().Skip(2).Reverse());
                 var mimeMessage = ConvertMime();
 
-                var grapService = new GraphMailingService(Session.GraphClient, Session.Settings);
+                var grapService = new GraphMailingService(Session.GraphClient, Session.Settings, Session.User);
                 await grapService.SendMail(mimeMessage);
                 return "250 OK";
             }
