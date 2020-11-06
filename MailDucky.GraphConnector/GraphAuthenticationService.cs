@@ -26,25 +26,6 @@ namespace MailDucky.GraphConnector
             graphClient = new GraphServiceClient(authProvider);
         }
 
-        public async Task<User> GetUser(string username, string password)
-        {
-            try
-            {
-                var secureString = new System.Security.SecureString();
-                foreach (var character in password)
-                {
-                    secureString.AppendChar(character);
-                }
-                return await graphClient.Me.Request()
-                                .WithUsernamePassword(username, secureString)
-                                .GetAsync();
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-
         public async Task<User> GetUser(string username)
         {
             try
