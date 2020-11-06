@@ -35,26 +35,22 @@ namespace MailDucky.GraphConnector
         {
             foreach(var messageId in messageIds)
             {
-                await MoveMailToArchiveAsync(messageId);
+                try
+                {
+                    const string ArchiveFolderName = "archive";
+                    await graphClient.Users[user.Id]
+                            .Messages[messageId]
+                            .Move(ArchiveFolderName)
+                            .Request()
+                            .PostAsync();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 
-        public async Task MoveMailToArchiveAsync(string messageId)
-        {
-            try
-            {
-                const string ArchiveFolderName = "archive";
-                await graphClient.Users[user.Id]
-                        .Messages[messageId]
-                        .Move(ArchiveFolderName)
-                        .Request()
-                        .PostAsync();
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
 
         // This function returns a Dictionary of messageID, Email Message as MIME Message
         public async Task<Dictionary<string, string>> GetMailsAsync()
