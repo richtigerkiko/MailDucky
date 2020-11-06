@@ -29,5 +29,6 @@ namespace MailDucky.POP3
         public static string AuthFailed { get { return String.Format(Error, "Authentication Failed!"); } }
 
         public static string MessageNotFound { get { return "-ERR There is no Message {0}."; } }
+        public static string UsernameNotFound { get { return "-ERR sorry, no mailbox for {0} here"; } }
     }
 }

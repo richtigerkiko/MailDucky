@@ -34,38 +34,21 @@ namespace MailDucky.POP3.Pop3Commands
         private async Task<string> GetAuthResponse()
         {
             Username = Argument;
-            await Session.SendResponseAsync(Pop3Responses.UsernameOK);
-
-            var passCommandLine = await Session.ListenRequestAsync();
-
-            var commandAndArgument = CommandUtilities.SplitCommandLine(passCommandLine);
-            var passCommand = commandAndArgument.Item1;
-            Password = commandAndArgument.Item2;
-
-            var passCommandType = CommandUtilities.ParseCommandType(passCommand);
-
-            if (passCommandType == Pop3CommandType.PASS)
+            var graphAuthService = new GraphAuthenticationService(Session.Settings);
+            Session.GraphClient = graphAuthService.graphClient;
+            var user = await graphAuthService.GetUser(Username);
+            if (user != null)
             {
-                var graphAuthService = new GraphAuthenticationService(Session.Settings);
-                Session.GraphClient = graphAuthService.graphClient;
-                var user = await graphAuthService.GetUser(Username);
-                if (user != null)
-                {
-                    Session.SessionState = SessionState.TRANS;
-                    Session.User = user;
-                    var getGraphMails = new GraphMailingService(Session.GraphClient, Session.Settings, Session.User);
-                    Session.MessageStore = await getGraphMails.GetMailsAsync();
-                    return Pop3Responses.AuthSucceeded;
-                }
-                else
-                {
-                    return Pop3Responses.AuthFailed;
-                }
+                Session.SessionState = SessionState.WAITINGPASSWORD;
+                Session.User = user;
+                return Pop3Responses.UsernameOK;
             }
             else
             {
-                return Pop3Responses.InvalidCommand;
+                Session.SessionState = SessionState.AUTH;
+                return string.Format(Pop3Responses.UsernameNotFound, Username);
             }
+            
         }
 
         private bool AuthenticateUser(string username, string password)

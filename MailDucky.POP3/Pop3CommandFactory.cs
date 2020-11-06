@@ -33,6 +33,9 @@ namespace MailDucky.POP3
                 case Pop3CommandType.USER:
                     pop3Command = new Pop3UserResponse(command, argument);
                     break;
+                case Pop3CommandType.PASS:
+                    pop3Command = new Pop3PassResponse(command, argument);
+                    break;
                 case Pop3CommandType.STAT:
                     pop3Command = new Pop3StatResponse(command, argument);
                     break;

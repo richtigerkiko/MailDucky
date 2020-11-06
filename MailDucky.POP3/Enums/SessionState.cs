@@ -11,6 +11,7 @@ namespace MailDucky.POP3.Enums
     public enum SessionState
     {
         AUTH,
-        TRANS
+        TRANS,
+        WAITINGPASSWORD
     }
 }
