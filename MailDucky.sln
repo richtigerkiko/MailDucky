@@ -11,13 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.GraphConnector", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.Common", "MailDucky.Common\MailDucky.Common.csproj", "{948124F1-82B1-4697-BD63-F59EB730621C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.SettingsDB", "MailDucky.SettingsDB\MailDucky.SettingsDB.csproj", "{C982E972-B710-4E62-B6BF-ED74CB1C4982}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.API", "MailDucky.API\MailDucky.API.csproj", "{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.Service", "MailDucky.Service\MailDucky.Service.csproj", "{CBAF7BE3-72DA-4E15-9000-457705FB9537}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailDucky.Test", "MailDucky.Test\MailDucky.Test.csproj", "{929F578D-D449-4970-BAEB-1B88C013BF63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailDucky.Test", "MailDucky.Test\MailDucky.Test.csproj", "{929F578D-D449-4970-BAEB-1B88C013BF63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,14 +37,6 @@ Global
 		{948124F1-82B1-4697-BD63-F59EB730621C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{948124F1-82B1-4697-BD63-F59EB730621C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{948124F1-82B1-4697-BD63-F59EB730621C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C982E972-B710-4E62-B6BF-ED74CB1C4982}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9AAA598-B9F9-41E5-ADFC-5768A7F0613B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBAF7BE3-72DA-4E15-9000-457705FB9537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBAF7BE3-72DA-4E15-9000-457705FB9537}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBAF7BE3-72DA-4E15-9000-457705FB9537}.Release|Any CPU.ActiveCfg = Release|Any CPU

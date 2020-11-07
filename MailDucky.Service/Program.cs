@@ -5,12 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
-using Microsoft.AspNetCore.Hosting;
 using System.Globalization;
 using System.IO;
 using System.Threading;
-using MailDucky.API;
-using MailDucky.SettingsDB;
 
 
 namespace MailDucky.Service

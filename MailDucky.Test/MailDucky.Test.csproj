@@ -26,11 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MailDucky.API\MailDucky.API.csproj" />
     <ProjectReference Include="..\MailDucky.Common\MailDucky.Common.csproj" />
     <ProjectReference Include="..\MailDucky.GraphConnector\MailDucky.GraphConnector.csproj" />
     <ProjectReference Include="..\MailDucky.POP3\MailDucky.POP3.csproj" />
-    <ProjectReference Include="..\MailDucky.SettingsDB\MailDucky.SettingsDB.csproj" />
     <ProjectReference Include="..\MailDucky.SMTP\MailDucky.SMTP.csproj" />
   </ItemGroup>
 
