@@ -23,7 +23,7 @@ namespace MailDucky.POP3.Pop3Commands
             {
                 if (Session.MessageStore.Count >= mailID)
                 {
-                    Session.MessageIdsMarkedForDeletion.Add(Session.MessageStore.ElementAt(mailID -1 ).Key);
+                    Session.MessageIdsMarkedForDeletion.Add(Session.MessageStore.ElementAt(mailID -1).Key);
                     return string.Format(Pop3Responses.OK, "");
                 }
                 else return Pop3Responses.MessageNotFound;
