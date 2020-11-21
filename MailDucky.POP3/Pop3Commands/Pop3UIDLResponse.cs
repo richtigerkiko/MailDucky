@@ -33,7 +33,7 @@ namespace MailDucky.POP3.Pop3Commands
             if(Argument == string.Empty)
             {
                 // return one OK first
-                Session.SendResponse(Pop3Responses.OK);
+                //Session.SendResponse(Pop3Responses.OK);
 
                 // then send a multiline answer ended by the Terminator
                 var mailcounter = 0;
@@ -48,7 +48,8 @@ namespace MailDucky.POP3.Pop3Commands
                         continue;
                     }
 
-                    returnString += string.Format("{0} {1}", mailcounter, ShortenMicrosoftGraphId(message.Key));
+                    returnString += string.Format("+OK {0} {1}", mailcounter, ShortenMicrosoftGraphId(message.Key));
+                    returnString += Session.NEWLINE;
                 }
 
                 // add Terminator
@@ -83,7 +84,7 @@ namespace MailDucky.POP3.Pop3Commands
         /// <returns></returns>
         private string ShortenMicrosoftGraphId(string id)
         {
-            return id.Substring(0, 70);
+            return id.Substring(id.Length - 70);
         }
     }
 }
