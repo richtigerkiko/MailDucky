@@ -22,6 +22,7 @@ namespace MailDucky.POP3.Enums
         RSET,
         INVALID,
         CAPA,
-        UIDL
+        UIDL,
+        TOP
     }
 }

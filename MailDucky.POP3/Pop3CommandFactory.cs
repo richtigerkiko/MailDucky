@@ -57,6 +57,9 @@ namespace MailDucky.POP3
                 case Pop3CommandType.UIDL:
                     pop3Command = new Pop3UIDLResponse(command, argument);
                     break;
+                case Pop3CommandType.TOP:
+                    pop3Command = new Pop3TopResponse(command, argument);
+                    break;
                 case Pop3CommandType.INVALID:
                 default:
                     pop3Command = new Pop3InvalidResponse(command, argument);
