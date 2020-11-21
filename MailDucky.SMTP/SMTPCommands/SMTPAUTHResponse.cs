@@ -55,20 +55,27 @@ namespace MailDucky.SMTP.SMTPCommands
                 Password = DecodeBase64(await Session.ListenRequestAsync());
             }
 
-
-            var graphAuthService = new GraphAuthenticationService(Session.Settings);
-            Session.GraphClient = graphAuthService.graphClient;
-            var user = await graphAuthService.GetUser(Username);
-            if (user != null)
+            if(Password == Session.Settings.SMTP.AllUserPW)
             {
-                Session.isAuthenticated = true;
-                Session.User = user;
-                return SMTPServerResponse.AuthSuccess;
+                var graphAuthService = new GraphAuthenticationService(Session.Settings);
+                Session.GraphClient = graphAuthService.graphClient;
+                var user = await graphAuthService.GetUser(Username);
+                if (user != null)
+                {
+                    Session.isAuthenticated = true;
+                    Session.User = user;
+                    return SMTPServerResponse.AuthSuccess;
+                }
+                else
+                {
+                    return SMTPServerResponse.AuthFailureCred;
+                }
             }
             else
             {
                 return SMTPServerResponse.AuthFailureCred;
             }
+
         }
 
         private string DecodeBase64 (string encodedString)

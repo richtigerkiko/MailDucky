@@ -10,9 +10,6 @@ namespace MailDucky.POP3.Pop3Commands
 {
     class Pop3PassResponse : Pop3CommandBase
     {
-        // Super Tempörär (Bis DB fertig)
-        const string AppPw = "Kennwort123+++";
-
         public Pop3PassResponse(string command, string argument) : base(command, argument)
         {
             Command = command;
@@ -29,7 +26,7 @@ namespace MailDucky.POP3.Pop3Commands
             var password = Argument;
             if (Session.SessionState == SessionState.WAITINGPASSWORD)
             {
-                if (password == AppPw)
+                if (password == Session.Settings.Pop3.AllUserPW)
                 {
                     var getGraphMails = new GraphMailingService(Session.GraphClient, Session.Settings, Session.User);
                     Session.MessageStore = await getGraphMails.GetMailsAsync();
